@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2A6041"
+    tools:context=".Homepage">
+
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_width="157dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="640dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="300dp"
+        android:maxHeight="300dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/queuecumber_logo_01"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="373dp"
+        android:layout_height="201dp"
+        android:background="@drawable/homepagebubbles"
+        android:minHeight="0dp"
+        android:paddingBottom="155dp"
+        android:text="Playlist Recommendations"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.570" />
+
+    <Button
+        android:id="@+id/login3"
+        android:layout_width="373dp"
+        android:layout_height="201dp"
+        android:background="@drawable/homepagebubbles"
+        android:minHeight="0dp"
+        android:paddingBottom="155dp"
+        android:text="Statistics"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.980" />
+
+    <Button
+        android:id="@+id/login2"
+        android:layout_width="373dp"
+        android:layout_height="201dp"
+        android:background="@drawable/homepagebubbles"
+        android:minHeight="0dp"
+        android:paddingBottom="155dp"
+        android:text="Activities"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.160" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
