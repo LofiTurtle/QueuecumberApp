@@ -1,20 +1,25 @@
 package com.example.queuecumber
 
-import android.content.Intent
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
+import androidx.browser.customtabs.CustomTabsIntent
+import androidx.browser.customtabs.CustomTabsIntent.Builder
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        var loginButton = findViewById<Button>(R.id.login)
+        val loginButton = findViewById<Button>(R.id.login)
         loginButton.setOnClickListener {
-            val i = Intent(Intent.ACTION_VIEW, Uri.parse("https://accounts.spotify.com/en/login?continue=https%3A%2F%2Fwww.spotify.com%2Fus%2Faccount%2Ftwostepauth%2Fmanage%2F&max_age=0"))
-            startActivity(i)
+            val spotifyLoginUrl = "http://10.0.2.2:5000/login/"
+
+            val builder = Builder()
+            val customTabsIntent: CustomTabsIntent = builder.build()
+
+            customTabsIntent.launchUrl(this, Uri.parse(spotifyLoginUrl))
         }
     }
 }
