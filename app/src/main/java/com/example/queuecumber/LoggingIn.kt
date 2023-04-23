@@ -25,7 +25,6 @@ class LoggingIn : AppCompatActivity() {
             println("code=$authCode")
 
             val queue = Volley.newRequestQueue(this)
-//            val url = "http://10.0.2.2:5000/callback/?code=$authCode"
             val url = getString(R.string.domain) + getString(R.string.callback_route) + "?code=$authCode"
 
             val clientTokenRequest = JsonObjectRequest(
