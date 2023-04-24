@@ -22,7 +22,6 @@ class LoggingIn : AppCompatActivity() {
         val data = intent.data
         if (data != null) {
             val authCode: String? = data.getQueryParameter("code")
-            println("code=$authCode")
 
             val queue = Volley.newRequestQueue(this)
             val url = getString(R.string.domain) + getString(R.string.callback_route) + "?code=$authCode"
