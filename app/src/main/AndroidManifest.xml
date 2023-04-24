@@ -14,7 +14,8 @@
         android:theme="@style/Theme.AppCompat">
         <activity
             android:name=".Homepage"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
         </activity>
         <activity
             android:name=".LoggingIn"
