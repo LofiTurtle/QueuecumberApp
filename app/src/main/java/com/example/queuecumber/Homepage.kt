@@ -9,7 +9,6 @@ import com.example.queuecumber.utils.ApiUtil
 
 class Homepage : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-        val splashScreen = installSplashScreen()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_homepage)
 
