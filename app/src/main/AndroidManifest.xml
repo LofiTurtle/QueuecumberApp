@@ -14,11 +14,6 @@
         android:theme="@style/Theme.AppCompat">
         <activity
             android:name=".Homepage"
-            android:exported="true"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
-        </activity>
-        <activity
-            android:name=".LoggingIn"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
