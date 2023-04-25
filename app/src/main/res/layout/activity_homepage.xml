@@ -9,15 +9,16 @@
 
     <ImageView
         android:id="@+id/image_view"
-        android:layout_width="157dp"
-        android:layout_height="100dp"
-        android:layout_marginBottom="640dp"
+        android:layout_width="217dp"
+        android:layout_height="128dp"
+        android:layout_marginBottom="704dp"
         android:adjustViewBounds="true"
         android:maxWidth="300dp"
         android:maxHeight="300dp"
         android:scaleType="fitCenter"
         android:src="@drawable/queuecumber_logo_01"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
@@ -35,7 +36,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.570" />
+        app:layout_constraintVertical_bias="0.600" />
 
     <Button
         android:id="@+id/login3"
@@ -51,7 +52,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.980" />
+        app:layout_constraintVertical_bias="0.950" />
 
     <Button
         android:id="@+id/login2"
@@ -64,10 +65,11 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.160" />
+        app:layout_constraintVertical_bias="0.250" />
 
     <TextView
         android:id="@+id/welcomeText"
@@ -76,9 +78,12 @@
         android:text="loading..."
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/login"
-        app:layout_constraintEnd_toEndOf="@+id/login2"
-        app:layout_constraintStart_toStartOf="@+id/login2"
-        app:layout_constraintTop_toBottomOf="@+id/login2" />
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.136" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
