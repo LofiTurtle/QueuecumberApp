@@ -1,8 +1,11 @@
 package com.example.queuecumber
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.AuthFailureError
@@ -21,6 +24,12 @@ class Homepage : AppCompatActivity() {
         val tokensPref = this.getSharedPreferences(
             getString(R.string.tokens_file_key), Context.MODE_PRIVATE
         )
+
+        val activitiesButton = findViewById<Button>(R.id.homepage_activities)
+        activitiesButton.setOnClickListener {
+            val intent = Intent(this, ActivityHomePage::class.java)
+            startActivity(intent)
+        }
 
         // TODO make a helper method for this
         val userInfoRequest = object : JsonObjectRequest(
