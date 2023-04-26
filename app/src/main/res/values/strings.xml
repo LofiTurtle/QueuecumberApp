@@ -16,4 +16,5 @@
     <string name="domain">http://10.0.2.2:5000</string>
     <string name="callback_route">/callback/</string>
     <string name="user_route">/user/</string>
+    <string name="login_route">/login/</string>
 </resources>
