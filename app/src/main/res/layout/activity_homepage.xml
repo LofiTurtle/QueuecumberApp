@@ -8,7 +8,7 @@
     tools:context=".Homepage">
 
     <ImageView
-        android:id="@+id/image_view"
+        android:id="@+id/homepage_Logo"
         android:layout_width="217dp"
         android:layout_height="128dp"
         android:layout_marginBottom="704dp"
@@ -23,7 +23,7 @@
         app:layout_constraintRight_toRightOf="parent" />
 
     <Button
-        android:id="@+id/login"
+        android:id="@+id/homepage_to_recommendations"
         android:layout_width="373dp"
         android:layout_height="201dp"
         android:background="@drawable/homepagebubbles"
@@ -39,7 +39,7 @@
         app:layout_constraintVertical_bias="0.600" />
 
     <Button
-        android:id="@+id/login3"
+        android:id="@+id/homepage_to_statistics"
         android:layout_width="373dp"
         android:layout_height="201dp"
         android:background="@drawable/homepagebubbles"
@@ -55,7 +55,7 @@
         app:layout_constraintVertical_bias="0.950" />
 
     <Button
-        android:id="@+id/login2"
+        android:id="@+id/homepage_to_activities"
         android:layout_width="373dp"
         android:layout_height="201dp"
         android:background="@drawable/homepagebubbles"
