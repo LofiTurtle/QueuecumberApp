@@ -14,7 +14,7 @@ class LoginActivity : AppCompatActivity() {
 
         val loginButton = findViewById<Button>(R.id.login)
         loginButton.setOnClickListener {
-            val spotifyLoginUrl = "http://10.0.2.2:5000/login/"
+            val spotifyLoginUrl = getString(R.string.domain) + getString(R.string.login_route)
 
             val builder = Builder()
             val customTabsIntent: CustomTabsIntent = builder.build()
