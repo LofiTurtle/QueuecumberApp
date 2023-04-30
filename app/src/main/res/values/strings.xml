@@ -17,4 +17,8 @@
     <string name="callback_route">/callback/</string>
     <string name="user_route">/user/</string>
     <string name="login_route">/login/</string>
+    <string name="activities_route">/activities/</string>
+    <string name="sessions_route">/sessions/</string>
+    <string name="update_session_route">/session/</string>
+    <string name="activity_playlists_route">/activity_playlists/</string>
 </resources>
