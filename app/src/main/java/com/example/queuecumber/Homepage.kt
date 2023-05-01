@@ -22,6 +22,12 @@ class Homepage : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val toRecommendationsButton = findViewById<Button>(R.id.homepage_to_recommendations)
+        toRecommendationsButton.setOnClickListener {
+            val intent = Intent(this, RecommendationsHomePage::class.java)
+            startActivity(intent)
+        }
+
         val welcomeText = findViewById<TextView>(R.id.welcomeText)
         ApiUtil.userInfoRequest(this, { response ->
             welcomeText.text = "Welcome, " + response.getString("display_name") + "!"

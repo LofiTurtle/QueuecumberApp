@@ -13,7 +13,7 @@
     <string name="client_access_token">com.example.queuecumber.CAT_KEY</string>
     <string name="client_refresh_token">com.example.queuecumber.CRT_KEY</string>
 
-    <string name="domain">http://10.0.2.2:5000</string>
+    <string name="domain">http://172.20.10.2:5001</string>
     <string name="callback_route">/callback/</string>
     <string name="user_route">/user/</string>
     <string name="login_route">/login/</string>
