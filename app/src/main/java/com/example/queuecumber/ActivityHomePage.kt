@@ -28,7 +28,9 @@ class ActivityHomePage : AppCompatActivity() {
             val activities = response.getJSONArray("activities")
             for (i in 0 until activities.length()) {
                 Log.i("Activity list", i.toString() + " : " + activities.getString(i))
-                val view:View = LayoutInflater.from(this).inflate(R.layout.activities_list_element, null)
+                val view:TextView =
+                    LayoutInflater.from(this).inflate(R.layout.activities_list_element, null) as TextView
+                view.text = activities.getString(i)
                 val activitiesList = findViewById<LinearLayout>(R.id.activities_list_layout)
                 activitiesList.addView(view)
             }
