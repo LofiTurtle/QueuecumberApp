@@ -8,6 +8,7 @@
     tools:context=".ActivityHomePage">
 
     <TextView
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ACTIVITIES"
@@ -37,136 +38,20 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.045" />
 
-    <ImageButton
-        android:id="@+id/working_out_button"
-        android:layout_width="104dp"
-        android:layout_height="97dp"
-        android:background="@drawable/activitybuttonbubbles"
-        android:contentDescription="Working Out"
-        android:minHeight="0dp"
-        android:paddingTop="3dp"
-        android:src="@drawable/working_out_button"
-        android:textSize="20sp"
-        android:textStyle="bold"
+    <ScrollView
+        android:layout_width="299dp"
+        android:layout_height="692dp"
+        android:contentDescription="Scroll"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.762"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.284" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3">
 
-    <TextView
-        android:id="@+id/WorkingOutText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Working Out"
-        android:textColor="#EEFFEE"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.775"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.393" />
-
-    <TextView
-        android:id="@+id/DrivingText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Driving"
-        android:textColor="#EEFFEE"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.265"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.393" />
-
-    <TextView
-        android:id="@+id/StudyingText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Studying"
-        android:textColor="#EEFFEE"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.252"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.639" />
-
-    <TextView
-        android:id="@+id/NewActivityText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Add New"
-        android:textColor="#EEFFEE"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.741"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.639" />
-
-    <ImageButton
-        android:id="@+id/driving_button"
-        android:layout_width="104dp"
-        android:layout_height="97dp"
-        android:background="@drawable/activitybuttonbubbles"
-        android:contentDescription="Driving"
-        android:minHeight="0dp"
-        android:paddingRight="0dp"
-        android:src="@drawable/driving_button"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.237"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.285" />
-
-    <ImageButton
-        android:id="@+id/studying_button"
-        android:layout_width="104dp"
-        android:layout_height="97dp"
-        android:background="@drawable/activitybuttonbubbles"
-        android:contentDescription="Studying"
-        android:minHeight="0dp"
-        android:paddingRight="0dp"
-        android:src="@drawable/studying_button"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.237"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.55" />
-
-    <ImageButton
-        android:id="@+id/new_activity_button"
-        android:layout_width="104dp"
-        android:layout_height="97dp"
-        android:background="@drawable/activitybuttonbubbles"
-        android:contentDescription="Add New Activity"
-        android:minHeight="0dp"
-        android:paddingRight="0dp"
-        android:src="@drawable/new_activity_button"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.759"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.55" />
+        <LinearLayout
+            android:id="@+id/activities_list_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
