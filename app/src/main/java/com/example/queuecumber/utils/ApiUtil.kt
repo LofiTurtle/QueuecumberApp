@@ -56,6 +56,20 @@ object ApiUtil {
         }
     }
 
+    fun homepageInfoRequest(
+        context: AppCompatActivity,
+        responseListener: Response.Listener<JSONObject>
+    ) {
+        val queue = Volley.newRequestQueue(context)
+        val url = context.getString(R.string.domain) + context.getString(R.string.homepage_info_route)
+        val request = constructAuthorizedRequest(context, Request.Method.GET, url, responseListener)
+        { error ->
+            Log.e("ApiUtil", error.toString())
+            error.message?.let { Log.e("ApiUtil", it) }
+        }
+        queue.add(request)
+    }
+
     fun activitiesRequest(
         context: AppCompatActivity,
         responseListener: Response.Listener<JSONObject>
