@@ -18,8 +18,8 @@ class ActivityHomePage : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.homepage_activities_section)
 
-        val backButton = findViewById<ImageButton>(R.id.back_button_activities)
-        backButton.setOnClickListener {
+        val backButtonA = findViewById<ImageButton>(R.id.back_button_activities)
+        backButtonA.setOnClickListener {
             val intent = Intent(this, Homepage::class.java)
             startActivity(intent)
         }
