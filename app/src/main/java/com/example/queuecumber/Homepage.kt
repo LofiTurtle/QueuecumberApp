@@ -3,6 +3,7 @@ package com.example.queuecumber
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -50,6 +51,14 @@ class Homepage : AppCompatActivity() {
         val data = intent.data
         if (data != null) {
             ApiUtil.exchangeCodeForTokens(this, data)
+        }
+
+        // showing off how to get listening history
+        ApiUtil.historyRequest(this) {response ->
+            val historyArray = response.getJSONArray("history_items")
+            for (i in 0 until historyArray.length()) {
+                Log.i("Listening History", "$i - ${historyArray.getJSONObject(i).getString("song_name")}")
+            }
         }
     }
 }
