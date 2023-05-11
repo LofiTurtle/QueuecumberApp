@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content" >
 <Button
-    android:id="@+id/homepage_to_recommendations"
+    android:id="@+id/activities_homepage_element"
     android:layout_width="match_parent"
     android:layout_height="100dp"
     android:background="@drawable/activitybuttonbubbles"
