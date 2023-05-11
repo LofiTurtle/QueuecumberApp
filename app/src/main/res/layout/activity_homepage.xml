@@ -40,13 +40,13 @@
         app:layout_constraintVertical_bias="0.600" />
 
     <Button
-        android:id="@+id/homepage_to_statistics"
+        android:id="@+id/homepage_to_history"
         android:layout_width="373dp"
         android:layout_height="201dp"
         android:background="@drawable/homepagebubbles"
         android:minHeight="0dp"
         android:paddingBottom="155dp"
-        android:text="Statistics"
+        android:text="History"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

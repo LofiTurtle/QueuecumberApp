@@ -28,6 +28,12 @@ class Homepage : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val toHistoryButton = findViewById<Button>(R.id.homepage_to_history)
+        toHistoryButton.setOnClickListener {
+            val intent = Intent(this, HistoryHomePage::class.java)
+            startActivity(intent)
+        }
+
         val welcomeText = findViewById<TextView>(R.id.welcomeText)
         ApiUtil.userInfoRequest(this, { response ->
             welcomeText.text = "Welcome, " + response.getString("display_name") + "!"
