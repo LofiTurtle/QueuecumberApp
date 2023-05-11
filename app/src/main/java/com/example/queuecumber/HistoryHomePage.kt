@@ -25,7 +25,7 @@ class HistoryHomePage : AppCompatActivity() {
             for (i in 0 until history.length()) {
                 val view: LinearLayout =
                     LayoutInflater.from(this).inflate(R.layout.history_list_element, null) as LinearLayout
-                (view.getChildAt(0) as Button).text = history.getString(i)
+                (view.getChildAt(0) as Button).text = history.getJSONObject(i).getString("song_name")
                 val historyList = findViewById<LinearLayout>(R.id.history_list_layout)
                 historyList.addView(view)
             }
