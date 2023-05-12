@@ -1,6 +1,5 @@
 package com.example.queuecumber
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -16,8 +15,7 @@ class HistoryHomePage : AppCompatActivity() {
 
         val backButtonH = findViewById<ImageButton>(R.id.back_button_history)
         backButtonH.setOnClickListener {
-            val intent = Intent(this, Homepage::class.java)
-            startActivity(intent)
+            finish()
         }
 
         ApiUtil.historyRequest(this) { response ->

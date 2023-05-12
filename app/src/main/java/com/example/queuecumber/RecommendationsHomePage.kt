@@ -17,8 +17,7 @@ class RecommendationsHomePage : AppCompatActivity() {
 
         val backButtonR = findViewById<ImageButton>(R.id.back_button_recommendations)
         backButtonR.setOnClickListener {
-            val intent = Intent(this, Homepage::class.java)
-            startActivity(intent)
+            finish()
         }
 
         ApiUtil.activityPlaylistsRequest(this) { response ->
