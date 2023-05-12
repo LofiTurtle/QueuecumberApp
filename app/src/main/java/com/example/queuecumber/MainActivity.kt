@@ -11,7 +11,9 @@ import com.example.queuecumber.utils.ApiUtil
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         installSplashScreen()
+        setTheme(R.style.Theme_Queuecumber_NoActionBar)
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
         ApiUtil.userInfoRequest(this, {
             // request succeeded, meaning user is logged in, so go to homepage
             val intent = Intent(this, Homepage::class.java)
