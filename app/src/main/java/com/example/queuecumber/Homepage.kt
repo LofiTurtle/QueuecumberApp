@@ -14,6 +14,12 @@ import org.json.JSONObject
 class Homepage : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val data = intent.data
+        if (data != null) {
+            ApiUtil.exchangeCodeForTokens(this, data)
+        }
+
         setContentView(R.layout.activity_homepage)
 
         val toActivitiesButton = findViewById<Button>(R.id.homepage_to_activities)
@@ -54,15 +60,6 @@ class Homepage : AppCompatActivity() {
                     Log.i("Homepage Info", i.toString() + " " + infoArray[infoIndex].getString(i))
                 }
             }
-        }
-    }
-
-    override fun onResume() {
-        super.onResume()
-        super.onNewIntent(intent)
-        val data = intent.data
-        if (data != null) {
-            ApiUtil.exchangeCodeForTokens(this, data)
         }
     }
 }
