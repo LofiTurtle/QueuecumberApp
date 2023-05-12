@@ -20,8 +20,7 @@ class ActivityHomePage : AppCompatActivity() {
 
         val backButtonA = findViewById<ImageButton>(R.id.back_button_activities)
         backButtonA.setOnClickListener {
-            val intent = Intent(this, Homepage::class.java)
-            startActivity(intent)
+            finish()
         }
 
         ApiUtil.activitiesRequest(this) { response ->

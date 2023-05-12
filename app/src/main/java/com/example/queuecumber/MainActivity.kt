@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
             // request succeeded, meaning user is logged in, so go to homepage
             val intent = Intent(this, Homepage::class.java)
             startActivity(intent)
+            finish()
         }, {
             // request failed, meaning user is likely not logged in, so go to login screen
 
@@ -32,6 +33,7 @@ class MainActivity : AppCompatActivity() {
             // switch to login screen
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
+            finish()
         })
     }
 }
