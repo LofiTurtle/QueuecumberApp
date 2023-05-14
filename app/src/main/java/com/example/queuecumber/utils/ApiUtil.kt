@@ -12,6 +12,7 @@ import com.android.volley.Response
 import com.android.volley.Response.ErrorListener
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
+import com.example.queuecumber.ActivityHomePage
 import com.example.queuecumber.LoginActivity
 import com.example.queuecumber.R
 import org.json.JSONObject
@@ -78,12 +79,24 @@ object ApiUtil {
         queue.add(request)
     }
 
+    /**
+     * Creates a new activity for the user, then redirects to the activity homepage when done.
+     *
+     * @param context Always `this`
+     * @param activityName The name of the activity to create
+     */
     fun createActivity(
         context: AppCompatActivity,
-        activityName: String
+        activityName: String?
     ) {
+        if (activityName.isNullOrEmpty()) {
+            return
+        }
         val url = context.getString(R.string.domain) + context.getString(R.string.create_activity_route) + "?activity_name=$activityName"
-        val request = constructAuthorizedRequest(context, Request.Method.POST, url)
+        val request = constructAuthorizedRequest(context, Request.Method.POST, url) {
+            context.startActivity(Intent(context, ActivityHomePage::class.java))
+            context.finish()
+        }
         makeAuthorizedRequest(context, request)
     }
 
