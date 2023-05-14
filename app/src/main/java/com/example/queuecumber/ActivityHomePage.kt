@@ -23,6 +23,12 @@ class ActivityHomePage : AppCompatActivity() {
             finish()
         }
 
+        val newActivityButton = findViewById<Button>(R.id.new_activity_button)
+        newActivityButton.setOnClickListener {
+            val intent = Intent(this, CreateNewUserActivity::class.java)
+            startActivity(intent)
+        }
+
         ApiUtil.activitiesRequest(this) { response ->
             Log.i("ActivityHomePage", "Made activitiesRequest() call successfully")
             val activities = response.getJSONArray("activities")
