@@ -5,25 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#2A6041"
-    tools:context=".ActivityHomePage">
+    tools:context=".CreateNewUserActivity">
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/name_new_activity_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ACTIVITIES"
+        android:text="Name your new activity"
         android:textColor="#EEFFEE"
-        android:textSize="36sp"
+        android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.553"
+        app:layout_constraintHorizontal_bias="0.161"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.019" />
+        app:layout_constraintVertical_bias="0.431" />
 
     <ImageButton
-        android:id="@+id/back_button_activities"
+        android:id="@+id/back_button_new_user_activity"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:background="@drawable/round_button"
@@ -38,33 +38,43 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.019" />
 
-    <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="345dp"
-        android:layout_height="630dp"
-        android:contentDescription="Scroll"
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CREATE NEW ACTIVITY"
+        android:textColor="#EEFFEE"
+        android:textSize="25sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.388">
+        app:layout_constraintHorizontal_bias="0.79"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.025" />
 
-        <LinearLayout
-            android:id="@+id/activities_list_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"></LinearLayout>
-
-    </ScrollView>
+    <EditText
+        android:id="@+id/name_new_activity"
+        android:hint="e.g. 'Showering'"
+        android:paddingLeft="15dp"
+        android:textColorHint="#8DB921"
+        android:layout_width="380dp"
+        android:layout_height="61dp"
+        android:background="@drawable/new_activity_text_field"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/new_activity_button"
+        android:id="@+id/create_button"
         android:layout_width="366dp"
         android:layout_height="79dp"
         android:background="@drawable/activitybuttonbubbles"
         android:minHeight="0dp"
-        android:text="New Activity"
+        android:text="CREATE"
         android:textColor="#2A6041"
         android:textSize="30sp"
         android:textStyle="bold"
