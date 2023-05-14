@@ -28,6 +28,14 @@ class ActivityHomePage : AppCompatActivity() {
             val intent = Intent(this, CreateNewUserActivity::class.java)
             startActivity(intent)
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        // TODO delete existing activity elements here
+        val activitiesList = findViewById<LinearLayout>(R.id.activities_list_layout)
+        activitiesList.removeAllViews()
 
         ApiUtil.activitiesRequest(this) { response ->
             Log.i("ActivityHomePage", "Made activitiesRequest() call successfully")
@@ -37,8 +45,10 @@ class ActivityHomePage : AppCompatActivity() {
                 val view:LinearLayout =
                     LayoutInflater.from(this).inflate(R.layout.activities_list_element, null) as LinearLayout
                 (view.getChildAt(0) as Button).text = activities.getJSONObject(i).getString("name")
-                val activitiesList = findViewById<LinearLayout>(R.id.activities_list_layout)
                 activitiesList.addView(view)
+                view.setOnClickListener {
+                    // TODO start activity and send it information
+                }
             }
         }
     }

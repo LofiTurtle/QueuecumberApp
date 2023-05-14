@@ -94,7 +94,8 @@ object ApiUtil {
         }
         val url = context.getString(R.string.domain) + context.getString(R.string.create_activity_route) + "?activity_name=$activityName"
         val request = constructAuthorizedRequest(context, Request.Method.POST, url) {
-            context.startActivity(Intent(context, ActivityHomePage::class.java))
+            Log.i("createActivity", "Creating new activity" + activityName)
+//            context.startActivity(Intent(context, ActivityHomePage::class.java))
             context.finish()
         }
         makeAuthorizedRequest(context, request)
