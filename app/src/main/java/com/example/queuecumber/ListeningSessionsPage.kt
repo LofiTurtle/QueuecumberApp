@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.TextView
 import com.example.queuecumber.utils.ApiUtil
@@ -15,10 +16,22 @@ class ListeningSessionsPage : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_listening_sessions_page)
 
-        // TODO find a way to get the activity_id and name from previous screen
-        val activityId = 1
+        val backButtonA = findViewById<ImageButton>(R.id.back_button_listening_sessions)
+        backButtonA.setOnClickListener {
+            finish()
+        }
 
-        findViewById<TextView>(R.id.activity_title).text = "An Activity"
+        val extras = intent.extras
+        var activityName: String = ""
+        var activityId: Int = -1
+        if (extras != null) {
+            activityName = extras.getString("activity_name").toString()
+            activityId = extras.getInt("activity_id")
+        }
+
+        // TODO find a way to get the activity_id and name from previous screen
+
+        findViewById<TextView>(R.id.activity_title).text = activityName
 
         ApiUtil.sessionsRequest(this, activityId) {response ->
             val listeningSessions = response.getJSONArray("sessions")
