@@ -28,7 +28,7 @@ class RecommendationsHomePage : AppCompatActivity() {
                 val view: LinearLayout =
                     LayoutInflater.from(this).inflate(R.layout.recommendations_list_element, null) as LinearLayout
                 // endpoint does not return the playlist name, only the activity name. So just say "{activity_name} Music"
-                (view.getChildAt(0) as Button).text = recommendations.getJSONObject(i).getString("activity_name") + " Music"
+                (view.getChildAt(1) as Button).text = recommendations.getJSONObject(i).getString("activity_name") + " Music"
                 val recommendationsList = findViewById<LinearLayout>(R.id.recommendations_list_layout)
                 recommendationsList.addView(view)
             }
