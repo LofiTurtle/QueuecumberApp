@@ -61,7 +61,6 @@
         android:layout_width="380dp"
         android:layout_height="61dp"
         android:background="@drawable/new_activity_text_field"
-        android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintLeft_toLeftOf="parent"
