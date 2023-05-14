@@ -7,12 +7,54 @@
     android:background="#2A6041"
     tools:context=".CreateNewUserActivity">
 
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_width="206dp"
+        android:layout_height="178dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="300dp"
+        android:maxHeight="300dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/queuecumber_logo_01"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.092" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="302dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/middlebackground"
+        android:src="@drawable/notesandseeds"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.456" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/notesandseeds"
+        android:background="#EEFFEE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
     <TextView
         android:id="@+id/name_new_activity_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Name your new activity"
-        android:textColor="#EEFFEE"
+        android:textColor="#2A6041"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -20,7 +62,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.431" />
+        app:layout_constraintVertical_bias="0.546" />
 
     <ImageButton
         android:id="@+id/back_button_new_user_activity"
@@ -55,21 +97,22 @@
 
     <EditText
         android:id="@+id/name_new_activity"
-        android:hint="e.g. 'Showering'"
-        android:inputType="text"
-        android:maxLines="1"
-        android:maxLength="16"
-        android:paddingLeft="15dp"
-        android:textColor="#000000"
-        android:textColorHint="#8DB921"
         android:layout_width="380dp"
         android:layout_height="61dp"
         android:background="@drawable/new_activity_text_field"
+        android:hint="e.g. 'Showering'"
+        android:inputType="text"
+        android:maxLength="16"
+        android:maxLines="1"
+        android:paddingLeft="15dp"
+        android:textColor="#000000"
+        android:textColorHint="#8DB921"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.614" />
 
     <Button
         android:id="@+id/create_button"

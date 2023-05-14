@@ -16,8 +16,8 @@ class ListeningSessionsPage : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_listening_sessions_page)
 
-        val backButtonA = findViewById<ImageButton>(R.id.back_button_listening_sessions)
-        backButtonA.setOnClickListener {
+        val backButtonLS = findViewById<ImageButton>(R.id.back_button_listening_sessions)
+        backButtonLS.setOnClickListener {
             finish()
         }
 
