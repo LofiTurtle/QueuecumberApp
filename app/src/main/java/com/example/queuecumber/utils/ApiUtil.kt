@@ -110,10 +110,10 @@ object ApiUtil {
      */
     fun sessionsRequest(
         context: AppCompatActivity,
-        responseListener: Response.Listener<JSONObject>,
-        activityId: Int
+        activityId: Int,
+        responseListener: Response.Listener<JSONObject>
     ) {
-        val url = context.getString(R.string.domain) + context.getString(R.string.sessions_route) + "/$activityId"
+        val url = context.getString(R.string.domain) + context.getString(R.string.sessions_route) + "$activityId/"
         val request = constructAuthorizedRequest(context, Request.Method.GET, url, responseListener)
         makeAuthorizedRequest(context, request)
     }

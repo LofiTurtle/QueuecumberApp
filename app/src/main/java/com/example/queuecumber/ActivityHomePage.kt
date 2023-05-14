@@ -25,7 +25,7 @@ class ActivityHomePage : AppCompatActivity() {
 
         val newActivityButton = findViewById<Button>(R.id.new_activity_button)
         newActivityButton.setOnClickListener {
-            val intent = Intent(this, CreateNewUserActivity::class.java)
+            val intent = Intent(this, ListeningSessionsPage::class.java)
             startActivity(intent)
         }
     }
@@ -38,7 +38,6 @@ class ActivityHomePage : AppCompatActivity() {
         activitiesList.removeAllViews()
 
         ApiUtil.activitiesRequest(this) { response ->
-            Log.i("ActivityHomePage", "Made activitiesRequest() call successfully")
             val activities = response.getJSONArray("activities")
             for (i in 0 until activities.length()) {
                 Log.i("Activity list", i.toString() + " : " + activities.getString(i))
@@ -48,6 +47,8 @@ class ActivityHomePage : AppCompatActivity() {
                 activitiesList.addView(view)
                 view.setOnClickListener {
                     // TODO start activity and send it information
+                    val intent = Intent(this, ListeningSessionsPage::class.java)
+                    startActivity(intent)
                 }
             }
         }

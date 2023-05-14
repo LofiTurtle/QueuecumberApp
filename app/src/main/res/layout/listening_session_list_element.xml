@@ -14,7 +14,7 @@
         android:minHeight="0dp"
         android:text=""
         android:textColor="#2A6041"
-        android:textSize="30sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
