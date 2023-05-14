@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.LinearLayout
+import android.widget.TextView
 import com.example.queuecumber.utils.ApiUtil
 
 class RecommendationsHomePage : AppCompatActivity() {
@@ -27,8 +28,10 @@ class RecommendationsHomePage : AppCompatActivity() {
                 Log.i("Recommendations list", i.toString() + " : " + recommendations.getString(i))
                 val view: LinearLayout =
                     LayoutInflater.from(this).inflate(R.layout.recommendations_list_element, null) as LinearLayout
-                // endpoint does not return the playlist name, only the activity name. So just say "{activity_name} Music"
-                (view.getChildAt(1) as Button).text = recommendations.getJSONObject(i).getString("activity_name") + " Music"
+                // endpoint does not return the playlist name, only the activity name.
+                // So just say "{activity_name} Music"
+                ((view.getChildAt(1) as LinearLayout).getChildAt(0) as TextView).text =
+                    recommendations.getJSONObject(i).getString("activity_name") + " Music"
                 val recommendationsList = findViewById<LinearLayout>(R.id.recommendations_list_layout)
                 recommendationsList.addView(view)
             }
