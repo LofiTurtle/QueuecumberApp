@@ -25,7 +25,7 @@ class ActivityHomePage : AppCompatActivity() {
 
         val newActivityButton = findViewById<Button>(R.id.new_activity_button)
         newActivityButton.setOnClickListener {
-            val intent = Intent(this, ListeningSessionsPage::class.java)
+            val intent = Intent(this, CreateNewUserActivity::class.java)
             startActivity(intent)
         }
     }
@@ -33,7 +33,6 @@ class ActivityHomePage : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
-        // TODO delete existing activity elements here
         val activitiesList = findViewById<LinearLayout>(R.id.activities_list_layout)
         activitiesList.removeAllViews()
 
@@ -41,13 +40,16 @@ class ActivityHomePage : AppCompatActivity() {
             val activities = response.getJSONArray("activities")
             for (i in 0 until activities.length()) {
                 Log.i("Activity list", i.toString() + " : " + activities.getString(i))
+                val activityName = activities.getJSONObject(i).getString("name")
+                val activityId = activities.getJSONObject(i).getInt("id")
                 val view:LinearLayout =
                     LayoutInflater.from(this).inflate(R.layout.activities_list_element, null) as LinearLayout
-                (view.getChildAt(0) as Button).text = activities.getJSONObject(i).getString("name")
+                (view.getChildAt(0) as Button).text = activityName
                 activitiesList.addView(view)
-                view.setOnClickListener {
-                    // TODO start activity and send it information
+                (view.getChildAt(0) as Button).setOnClickListener {
                     val intent = Intent(this, ListeningSessionsPage::class.java)
+                    intent.putExtra("activity_name", activityName)
+                    intent.putExtra("activity_id", activityId)
                     startActivity(intent)
                 }
             }
