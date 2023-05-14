@@ -78,24 +78,66 @@ object ApiUtil {
         queue.add(request)
     }
 
+    fun createActivity(
+        context: AppCompatActivity,
+        activityName: String
+    ) {
+        val url = context.getString(R.string.domain) + context.getString(R.string.create_activity_route) + "?activity_name=$activityName"
+        val request = constructAuthorizedRequest(context, Request.Method.POST, url)
+        makeAuthorizedRequest(context, request)
+    }
+
+    /**
+     * Gets all the sessions associated with an activity.
+     *
+     * @param context Always `this`
+     * @param responseListener Lambda function to handle the response
+     * @param activityId id of the activity to get sessions for. Pass null to get unlabeled sessions
+     */
     fun sessionsRequest(
         context: AppCompatActivity,
-        responseListener: Response.Listener<JSONObject>
+        responseListener: Response.Listener<JSONObject>,
+        activityId: Int
     ) {
-        val queue = Volley.newRequestQueue(context)
-        val url = context.getString(R.string.domain) + context.getString(R.string.sessions_route)
+        val url = context.getString(R.string.domain) + context.getString(R.string.sessions_route) + "/$activityId"
         val request = constructAuthorizedRequest(context, Request.Method.GET, url, responseListener)
-        queue.add(request)
+        makeAuthorizedRequest(context, request)
+    }
+
+    fun setSessionActivity(
+        context: AppCompatActivity,
+        sessionId: Int,
+        activityId: Int
+    ) {
+        val url = context.getString(R.string.domain) + context.getString(R.string.set_session_activity_route) + "/$sessionId" + "/?activity_id=$activityId"
+        makeAuthorizedRequest(
+            context,
+            constructAuthorizedRequest(context, Request.Method.POST, url)
+        )
     }
 
     fun activityPlaylistsRequest(
         context: AppCompatActivity,
-        responseListener: Response.Listener<JSONObject>
+        responseListener: Response.Listener<JSONObject>,
     ) {
-        val queue = Volley.newRequestQueue(context)
         val url = context.getString(R.string.domain) + context.getString(R.string.activity_playlists_route)
-        val request = constructAuthorizedRequest(context, Request.Method.GET, url, responseListener)
-        queue.add(request)
+        makeAuthorizedRequest(
+            context,
+            constructAuthorizedRequest(context, Request.Method.GET, url, responseListener)
+        )
+    }
+
+    fun createPlaylist(
+        context: AppCompatActivity,
+        activityId: Int
+    ) {
+        val url = context.getString(R.string.domain) +
+                context.getString(R.string.create_playlist_route) +
+                "?$activityId"
+        makeAuthorizedRequest(
+            context,
+            constructAuthorizedRequest(context, Request.Method.POST, url)
+        )
     }
 
     fun historyRequest(
@@ -154,12 +196,13 @@ object ApiUtil {
                 val tokensPref = context.getSharedPreferences(
                     context.getString(R.string.tokens_file_key), Context.MODE_PRIVATE
                 )
-                var maxWait = 10  // the max number of iterations to wait for tokens
+                var maxWait = 20  // the max number of iterations to wait for tokens
                 var CAT: String = tokensPref.getString(context.getString(R.string.client_access_token), "").toString()
                 while (CAT == "" && maxWait > 0) {
                     // sometimes tokens are still being fetched.
                     // Wait and check periodically for them to be added
-                    sleep(250)
+                    sleep(100)
+                    Log.i("ApiUtil", "Re-checking for tokens")
                     CAT = tokensPref.getString(context.getString(R.string.client_access_token), "").toString()
                     maxWait--
                 }
@@ -181,6 +224,16 @@ object ApiUtil {
         return constructAuthorizedRequest(context, method, url, responseListener) { error ->
             Log.e("ApiUtil", error.toString())
             error.message?.let { Log.e("ApiUtil", it) }
+        }
+    }
+
+    private fun constructAuthorizedRequest(
+        context: AppCompatActivity,
+        method: Int,
+        url: String
+    ): JsonObjectRequest {
+        return constructAuthorizedRequest(context, method, url) {
+            Log.i("ApiUtil", "Completed request successfully")
         }
     }
 
