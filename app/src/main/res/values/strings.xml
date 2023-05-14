@@ -18,9 +18,12 @@
     <string name="user_route">/user/</string>
     <string name="login_route">/login/</string>
     <string name="homepage_info_route">/homepage_info/</string>
+    <string name="create_activity_route">/activity/</string>
     <string name="activities_route">/activities/</string>
     <string name="sessions_route">/sessions/</string>
+    <string name="set_session_activity_route">/set_session_activity/</string>
     <string name="update_session_route">/session/</string>
-    <string name="activity_playlists_route">/activity_playlists/</string>
+    <string name="activity_playlists_route">/playlists/</string>
+    <string name="create_playlist_route">/create_playlist/</string>
     <string name="history_route">/history/</string>
 </resources>

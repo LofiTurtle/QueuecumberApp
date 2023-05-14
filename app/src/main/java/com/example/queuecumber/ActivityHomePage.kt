@@ -30,7 +30,7 @@ class ActivityHomePage : AppCompatActivity() {
                 Log.i("Activity list", i.toString() + " : " + activities.getString(i))
                 val view:LinearLayout =
                     LayoutInflater.from(this).inflate(R.layout.activities_list_element, null) as LinearLayout
-                (view.getChildAt(0) as Button).text = activities.getString(i)
+                (view.getChildAt(0) as Button).text = activities.getJSONObject(i).getString("name")
                 val activitiesList = findViewById<LinearLayout>(R.id.activities_list_layout)
                 activitiesList.addView(view)
             }
