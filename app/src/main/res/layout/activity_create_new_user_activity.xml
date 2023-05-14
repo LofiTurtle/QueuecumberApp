@@ -56,6 +56,9 @@
     <EditText
         android:id="@+id/name_new_activity"
         android:hint="e.g. 'Showering'"
+        android:inputType="text"
+        android:maxLines="1"
+        android:maxLength="16"
         android:paddingLeft="15dp"
         android:textColorHint="#8DB921"
         android:layout_width="380dp"
