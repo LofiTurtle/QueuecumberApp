@@ -29,13 +29,13 @@ class Homepage : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val toRecommendationsButton = findViewById<Button>(R.id.homepage_to_recommendations)
+        val toRecommendationsButton = findViewById<LinearLayout>(R.id.homepage_to_recommendations)
         toRecommendationsButton.setOnClickListener {
             val intent = Intent(this, RecommendationsHomePage::class.java)
             startActivity(intent)
         }
 
-        val toHistoryButton = findViewById<Button>(R.id.homepage_to_history)
+        val toHistoryButton = findViewById<LinearLayout>(R.id.homepage_to_history)
         toHistoryButton.setOnClickListener {
             val intent = Intent(this, HistoryHomePage::class.java)
             startActivity(intent)
