@@ -5,14 +5,12 @@ import android.content.Intent
 import android.net.Uri
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.contentValuesOf
 import com.android.volley.AuthFailureError
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.Response.ErrorListener
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
-import com.example.queuecumber.ActivityHomePage
 import com.example.queuecumber.LoginActivity
 import com.example.queuecumber.R
 import org.json.JSONObject
@@ -114,6 +112,21 @@ object ApiUtil {
         responseListener: Response.Listener<JSONObject>
     ) {
         val url = context.getString(R.string.domain) + context.getString(R.string.sessions_route) + "$activityId/"
+        val request = constructAuthorizedRequest(context, Request.Method.GET, url, responseListener)
+        makeAuthorizedRequest(context, request)
+    }
+
+    /**
+     * Gets all the sessions not labeled with an activity.
+     *
+     * @param context Always `this`
+     * @param responseListener Lambda function to handle the response
+     */
+    fun unlabeledSessionsRequest(
+        context: AppCompatActivity,
+        responseListener: Response.Listener<JSONObject>
+    ) {
+        val url = context.getString(R.string.domain) + context.getString(R.string.sessions_route)
         val request = constructAuthorizedRequest(context, Request.Method.GET, url, responseListener)
         makeAuthorizedRequest(context, request)
     }
