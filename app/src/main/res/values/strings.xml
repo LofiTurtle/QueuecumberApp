@@ -18,7 +18,8 @@
     <string name="user_route">/user/</string>
     <string name="login_route">/login/</string>
     <string name="homepage_info_route">/homepage_info/</string>
-    <string name="create_activity_route">/activity/</string>
+    <string name="create_activity_route">/activity/create/</string>
+    <string name="delete_activity_route">/activity/delete/</string>
     <string name="activities_route">/activities/</string>
     <string name="sessions_route">/sessions/</string>
     <string name="set_session_activity_route">/set_session_activity/</string>

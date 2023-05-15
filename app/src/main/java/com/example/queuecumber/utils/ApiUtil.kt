@@ -93,7 +93,24 @@ object ApiUtil {
         val url = context.getString(R.string.domain) + context.getString(R.string.create_activity_route) + "?activity_name=$activityName"
         val request = constructAuthorizedRequest(context, Request.Method.POST, url) {
             Log.i("createActivity", "Creating new activity" + activityName)
-//            context.startActivity(Intent(context, ActivityHomePage::class.java))
+            context.finish()
+        }
+        makeAuthorizedRequest(context, request)
+    }
+
+    /**
+     * Deletes an activity, then redirects to the activity homepage.
+     *
+     * @param context Always `this`
+     * @param activityId The id of the activity to delete
+     */
+    fun deleteActivity(
+        context: AppCompatActivity,
+        activityId: Int
+    ) {
+        val url = context.getString(R.string.domain) + context.getString(R.string.delete_activity_route) + "?activity_id=$activityId"
+        val request = constructAuthorizedRequest(context, Request.Method.POST, url) {
+            Log.i("deleteActivity", "Deleting activity $activityId")
             context.finish()
         }
         makeAuthorizedRequest(context, request)
