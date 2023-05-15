@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.queuecumber.utils.ApiUtil
@@ -22,7 +23,7 @@ class Homepage : AppCompatActivity() {
 
         setContentView(R.layout.activity_homepage)
 
-        val toActivitiesButton = findViewById<Button>(R.id.homepage_to_activities)
+        val toActivitiesButton = findViewById<LinearLayout>(R.id.homepage_to_activities)
         toActivitiesButton.setOnClickListener {
             val intent = Intent(this, ActivityHomePage::class.java)
             startActivity(intent)

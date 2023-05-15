@@ -22,13 +22,14 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
-    <Button
+    <LinearLayout
         android:id="@+id/homepage_to_recommendations"
         android:layout_width="373dp"
         android:layout_height="201dp"
         android:background="@drawable/homepagebubbles"
         android:minHeight="0dp"
         android:paddingBottom="155dp"
+        android:orientation="vertical"
         android:text="Playlist Recommendations"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -37,15 +38,18 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.600" />
+        app:layout_constraintVertical_bias="0.600">
 
-    <Button
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/homepage_to_history"
         android:layout_width="373dp"
         android:layout_height="201dp"
         android:background="@drawable/homepagebubbles"
         android:minHeight="0dp"
         android:paddingBottom="155dp"
+        android:orientation="vertical"
         android:text="History"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -53,15 +57,18 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.950" />
+        app:layout_constraintVertical_bias="0.950">
 
-    <Button
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/homepage_to_activities"
         android:layout_width="373dp"
         android:layout_height="201dp"
         android:background="@drawable/homepagebubbles"
         android:minHeight="0dp"
         android:paddingBottom="155dp"
+        android:orientation="vertical"
         android:text="Activities"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -70,7 +77,24 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.250" />
+        app:layout_constraintVertical_bias="0.250" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="testing testing tesing\ntesting testing tesing\ntesting testing tesing"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.136" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/welcomeText"
