@@ -29,8 +29,6 @@ class ListeningSessionsPage : AppCompatActivity() {
             activityId = extras.getInt("activity_id")
         }
 
-        // TODO find a way to get the activity_id and name from previous screen
-
         findViewById<TextView>(R.id.activity_title).text = activityName
 
         ApiUtil.sessionsRequest(this, activityId) {response ->

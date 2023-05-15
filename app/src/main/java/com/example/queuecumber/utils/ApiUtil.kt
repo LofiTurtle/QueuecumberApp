@@ -147,7 +147,7 @@ object ApiUtil {
     ) {
         val url = context.getString(R.string.domain) +
                 context.getString(R.string.create_playlist_route) +
-                "?$activityId"
+                "$activityId/"
         makeAuthorizedRequest(
             context,
             constructAuthorizedRequest(context, Request.Method.POST, url)
