@@ -48,7 +48,7 @@
         app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activity_title"
-        app:layout_constraintVertical_bias="0.388">
+        app:layout_constraintVertical_bias="0.258">
 
         <LinearLayout
             android:id="@+id/listening_session_list_layout"
@@ -57,5 +57,22 @@
             android:orientation="vertical"></LinearLayout>
 
     </ScrollView>
+
+    <Button
+        android:id="@+id/delete_activity_button"
+        android:layout_width="356dp"
+        android:layout_height="60dp"
+        android:background="@drawable/activitybuttonbubbles"
+        android:minHeight="0dp"
+        android:text="Delete Activity"
+        android:textColor="#2A6041"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.98" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
