@@ -48,9 +48,14 @@ class Homepage : AppCompatActivity() {
             error.message?.let { android.util.Log.e("Homepage", it) }
             welcomeText.text = "Couldn't get information"
         })
+    }
+
+    override fun onResume() {
+        super.onResume()
 
         // showing off how to get the information for the homepage
         ApiUtil.homepageInfoRequest(this) { response ->
+            // TODO do the homepage preview stuff
             val infoArray = ArrayList<JSONArray>()
             infoArray.add(response.getJSONArray("activities"))
             infoArray.add(response.getJSONArray("playlists"))

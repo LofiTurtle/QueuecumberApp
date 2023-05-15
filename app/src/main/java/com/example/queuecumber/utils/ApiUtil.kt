@@ -139,7 +139,9 @@ object ApiUtil {
         val url = context.getString(R.string.domain) + context.getString(R.string.set_session_activity_route) + "/$sessionId" + "/?activity_id=$activityId"
         makeAuthorizedRequest(
             context,
-            constructAuthorizedRequest(context, Request.Method.POST, url)
+            constructAuthorizedRequest(context, Request.Method.POST, url) {
+                context.finish()
+            }
         )
     }
 
