@@ -29,6 +29,11 @@ class ListeningSessionsPage : AppCompatActivity() {
             activityId = extras.getInt("activity_id")
         }
 
+        val deleteButton = findViewById<Button>(R.id.delete_activity_button)
+        deleteButton.setOnClickListener {
+            ApiUtil.deleteActivity(this, activityId)
+        }
+
         findViewById<TextView>(R.id.activity_title).text = activityName
 
         ApiUtil.sessionsRequest(this, activityId) {response ->
