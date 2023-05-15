@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.AuthFailureError
 import com.android.volley.Request
@@ -153,7 +154,7 @@ object ApiUtil {
         sessionId: Int,
         activityId: Int
     ) {
-        val url = context.getString(R.string.domain) + context.getString(R.string.set_session_activity_route) + "/$sessionId" + "/?activity_id=$activityId"
+        val url = context.getString(R.string.domain) + context.getString(R.string.set_session_activity_route) + "?session_id=$sessionId&activity_id=$activityId"
         makeAuthorizedRequest(
             context,
             constructAuthorizedRequest(context, Request.Method.POST, url) {
