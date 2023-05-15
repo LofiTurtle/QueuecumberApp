@@ -5,25 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#2A6041"
-    tools:context=".ActivityHomePage">
+    tools:context=".ListOfListeningActivities">
 
     <TextView
-        android:id="@+id/activity_title"
+        android:id="@+id/choose_an_activity_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ACTIVITIES"
+        android:text="CHOOSE AN ACTIVITY"
         android:textColor="#EEFFEE"
-        android:textSize="36sp"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.553"
+        app:layout_constraintHorizontal_bias="0.846"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.019" />
+        app:layout_constraintVertical_bias="0.023" />
 
     <ImageButton
-        android:id="@+id/back_button_activities"
+        android:id="@+id/back_button_activity_selection"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:background="@drawable/round_button"
@@ -40,15 +40,15 @@
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="364dp"
-        android:layout_height="575dp"
+        android:layout_width="345dp"
+        android:layout_height="695dp"
+        android:layout_marginBottom="52dp"
         android:contentDescription="Scroll"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activity_title"
-        app:layout_constraintVertical_bias="0.258">
+        app:layout_constraintVertical_bias="0.508">
 
         <LinearLayout
             android:id="@+id/activities_list_layout"
@@ -58,38 +58,5 @@
 
     </ScrollView>
 
-    <Button
-        android:id="@+id/new_activity_button"
-        android:layout_width="356dp"
-        android:layout_height="60dp"
-        android:background="@drawable/activitybuttonbubbles"
-        android:minHeight="0dp"
-        android:text="New Activity"
-        android:textColor="#2A6041"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.98" />
-
-    <Button
-        android:id="@+id/unlabeled_sessions_button"
-        android:layout_width="356dp"
-        android:layout_height="60dp"
-        android:background="@drawable/activitybuttonbubbles"
-        android:minHeight="0dp"
-        android:text="View Unlabeled Sessions"
-        android:textColor="#2A6041"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.889" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
