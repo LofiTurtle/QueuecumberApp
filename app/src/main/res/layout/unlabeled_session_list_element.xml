@@ -8,7 +8,7 @@
     android:layout_height="wrap_content" >
 
     <Button
-        android:id="@+id/listening_sessions_homepage_element"
+        android:id="@+id/unlabeled_sessions_homepage_element"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:background="@drawable/activitybuttonbubbles"
