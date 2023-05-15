@@ -150,7 +150,9 @@ object ApiUtil {
                 "$activityId/"
         makeAuthorizedRequest(
             context,
-            constructAuthorizedRequest(context, Request.Method.POST, url)
+            constructAuthorizedRequest(context, Request.Method.POST, url) {
+                context.recreate()
+            }
         )
     }
 
