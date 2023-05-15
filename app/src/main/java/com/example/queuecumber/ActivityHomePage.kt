@@ -23,6 +23,12 @@ class ActivityHomePage : AppCompatActivity() {
             finish()
         }
 
+        val unlabeledSessionsButton = findViewById<Button>(R.id.unlabeled_sessions_button)
+        unlabeledSessionsButton.setOnClickListener {
+            val intent = Intent(this, UnlabeledListeningSessions::class.java)
+            startActivity(intent)
+        }
+
         val newActivityButton = findViewById<Button>(R.id.new_activity_button)
         newActivityButton.setOnClickListener {
             val intent = Intent(this, CreateNewUserActivity::class.java)
