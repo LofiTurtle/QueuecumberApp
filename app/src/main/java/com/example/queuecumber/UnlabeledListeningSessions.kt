@@ -1,5 +1,6 @@
 package com.example.queuecumber
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -34,14 +35,18 @@ class UnlabeledListeningSessions : AppCompatActivity() {
                     LayoutInflater.from(this).inflate(R.layout.unlabeled_session_list_element, null) as LinearLayout
                 val startTimeMillis = listeningSessions.getJSONObject(i).getLong("start_time_millis")
                 val endTimeMillis = listeningSessions.getJSONObject(i).getLong("end_time_millis")
+                val sessionId = listeningSessions.getJSONObject(i).getInt("id")
+                Log.i("session_id", sessionId.toString())
                 val text = TimeFormatter.formatDate(startTimeMillis) + "\n" +
                         TimeFormatter.formatTime(startTimeMillis) + " - " +
                         TimeFormatter.formatTime(endTimeMillis)
                 (view.getChildAt(0) as Button).text = text
-                Log.i("ListeningSessionsPage", text)
                 sessionsList.addView(view)
-                view.setOnClickListener {
-                    // TODO go to labeling page
+                (view.getChildAt(0) as Button).setOnClickListener {
+                    val intent = Intent(this, ListOfListeningActivities::class.java)
+                    intent.putExtra("id", sessionId)
+                    Log.i("session intent", sessionId.toString())
+                    startActivity(intent)
                 }
             }
         }
