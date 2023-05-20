@@ -163,6 +163,16 @@ object ApiUtil {
         )
     }
 
+    fun sessionSongsRequest(
+        context: AppCompatActivity,
+        sessionId: Int,
+        responseListener: Response.Listener<JSONObject>
+    ) {
+        val url = context.getString(R.string.domain) + context.getString(R.string.session_songs_route) + "?session_id=$sessionId"
+        val request = constructAuthorizedRequest(context, Request.Method.GET, url, responseListener)
+        makeAuthorizedRequest(context, request)
+    }
+
     fun activityPlaylistsRequest(
         context: AppCompatActivity,
         responseListener: Response.Listener<JSONObject>,

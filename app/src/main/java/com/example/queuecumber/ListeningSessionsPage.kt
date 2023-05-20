@@ -1,5 +1,6 @@
 package com.example.queuecumber
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -41,6 +42,7 @@ class ListeningSessionsPage : AppCompatActivity() {
             for (i in 0 until listeningSessions.length()) {
                 val view:LinearLayout =
                     LayoutInflater.from(this).inflate(R.layout.listening_session_list_element, null) as LinearLayout
+                val sessionId = listeningSessions.getJSONObject(i).getInt("id")
                 val startTimeMillis = listeningSessions.getJSONObject(i).getLong("start_time_millis")
                 val endTimeMillis = listeningSessions.getJSONObject(i).getLong("end_time_millis")
                 val text = TimeFormatter.formatDate(startTimeMillis) + "\n" +
@@ -48,10 +50,13 @@ class ListeningSessionsPage : AppCompatActivity() {
                         TimeFormatter.formatTime(endTimeMillis)
                 (view.getChildAt(0) as Button).text = text
                 val sessionsList = findViewById<LinearLayout>(R.id.listening_session_list_layout)
-                Log.i("ListeningSessionsPage", text)
                 sessionsList.addView(view)
-                view.setOnClickListener {
-                    // TODO add listener to view songs
+                (view.getChildAt(0) as Button).setOnClickListener {
+                    val intent = Intent(this, IndividualSessionPage::class.java)
+                    intent.putExtra("session_id", sessionId)
+                    intent.putExtra("parent_activity", activityName)
+                    intent.putExtra("start_time_millis", startTimeMillis)
+                    startActivity(intent)
                 }
             }
         }
