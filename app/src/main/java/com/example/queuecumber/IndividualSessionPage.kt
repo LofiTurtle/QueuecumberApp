@@ -42,8 +42,6 @@ class IndividualSessionPage : AppCompatActivity() {
                     LayoutInflater.from(this).inflate(R.layout.history_list_element, null) as LinearLayout
                 (view.getChildAt(1) as TextView).text = songs.getJSONObject(i).getString("song_name")
                 (view.getChildAt(2) as TextView).text = songs.getJSONObject(i).getString("artist_name")
-                val playedAtMillis = songs.getJSONObject(i).getLong("played_at_millis")
-                (view.getChildAt(3) as TextView).text = TimeFormatter.formatDateTime(playedAtMillis)
                 songsList.addView(view)
             }
         }

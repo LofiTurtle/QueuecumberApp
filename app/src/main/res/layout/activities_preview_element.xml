@@ -6,16 +6,18 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content" >
-    <Button
+    <TextView
         android:id="@+id/activities_homepage_element"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
         android:background="@drawable/activitybuttonbubbles"
         android:minHeight="0dp"
         android:text="Driving"
         android:textColor="#2A6041"
-        android:textSize="30sp"
+        android:textSize="20sp"
         android:textStyle="bold"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

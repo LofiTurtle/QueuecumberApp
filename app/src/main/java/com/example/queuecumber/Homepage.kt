@@ -3,13 +3,16 @@ package com.example.queuecumber
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.LayoutInflater
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.queuecumber.utils.ApiUtil
+import com.example.queuecumber.utils.TimeFormatter
 import org.json.JSONArray
 import org.json.JSONObject
+import org.w3c.dom.ls.LSInput
 
 
 class Homepage : AppCompatActivity() {
@@ -54,17 +57,40 @@ class Homepage : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
+        val activitiesPreview = findViewById<LinearLayout>(R.id.homepage_to_activities)
+        val recommendationsPreview = findViewById<LinearLayout>(R.id.homepage_to_recommendations)
+        val historyPreview = findViewById<LinearLayout>(R.id.homepage_to_history)
+
+        // TODO don't remove the first title view
+        activitiesPreview.removeViews(1, activitiesPreview.childCount - 1)
+        recommendationsPreview.removeViews(1, recommendationsPreview.childCount - 1)
+        historyPreview.removeViews(1, historyPreview.childCount - 1)
+
         // showing off how to get the information for the homepage
         ApiUtil.homepageInfoRequest(this) { response ->
-            // TODO do the homepage preview stuff
-            val infoArray = ArrayList<JSONArray>()
-            infoArray.add(response.getJSONArray("activities"))
-            infoArray.add(response.getJSONArray("playlists"))
-            infoArray.add(response.getJSONArray("history"))
-            for (infoIndex in 0 until infoArray.size) {
-                for (i in 0 until infoArray[infoIndex].length()) {
-                    Log.i("Homepage Info", i.toString() + " " + infoArray[infoIndex].getString(i))
-                }
+            val activities = response.getJSONArray("activities")
+            for (i in 0 until activities.length()) {
+                val activityName = activities.getJSONObject(i).getString("name")
+                val view:LinearLayout =
+                    LayoutInflater.from(this).inflate(R.layout.activities_preview_element, null) as LinearLayout
+                (view.getChildAt(0) as TextView).text = activityName
+                activitiesPreview.addView(view)
+            }
+            val recommendations = response.getJSONArray("playlists")
+            for (i in 0 until recommendations.length()) {
+                val playlistName = activities.getJSONObject(i).getString("name") + " Music"
+                val view:LinearLayout =
+                    LayoutInflater.from(this).inflate(R.layout.recommendations_preview_element, null) as LinearLayout
+                (view.getChildAt(0) as TextView).text = playlistName
+                recommendationsPreview.addView(view)
+            }
+            val history = response.getJSONArray("history")
+            for (i in 0 until history.length()) {
+                val view:LinearLayout =
+                    LayoutInflater.from(this).inflate(R.layout.history_preview_element, null) as LinearLayout
+                (view.getChildAt(1) as TextView).text = history.getJSONObject(i).getString("song_name")
+                (view.getChildAt(2) as TextView).text = history.getJSONObject(i).getString("artist_name")
+                historyPreview.addView(view)
             }
         }
     }
