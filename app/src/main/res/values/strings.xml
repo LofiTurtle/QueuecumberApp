@@ -24,6 +24,7 @@
     <string name="sessions_route">/sessions/</string>
     <string name="set_session_activity_route">/set_session_activity/</string>
     <string name="update_session_route">/session/</string>
+    <string name="session_songs_route">/session_songs/</string>
     <string name="activity_playlists_route">/playlists/</string>
     <string name="create_playlist_route">/create_playlist/</string>
     <string name="history_route">/history/</string>
