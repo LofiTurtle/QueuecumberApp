@@ -23,10 +23,12 @@ class ListeningSessionsPage : AppCompatActivity() {
         }
 
         val extras = intent.extras
+        var activityInitialName: String = ""
         var activityName: String = ""
         var activityId: Int = -1
         if (extras != null) {
-            activityName = extras.getString("activity_name").toString()
+            activityInitialName = extras.getString("activity_name").toString()
+            activityName = activityInitialName.uppercase()
             activityId = extras.getInt("activity_id")
         }
 

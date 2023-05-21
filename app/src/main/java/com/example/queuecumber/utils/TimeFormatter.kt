@@ -22,4 +22,10 @@ object TimeFormatter {
         val sdf = SimpleDateFormat("h:mm a", Locale.getDefault())
         return sdf.format(playedAtDate)
     }
+
+    fun formatDateNoYear(timeMillis: Long): String {
+        val playedAtDate = Date(timeMillis)
+        val sdf = SimpleDateFormat("MMM d", Locale.getDefault())
+        return sdf.format(playedAtDate)
+    }
 }

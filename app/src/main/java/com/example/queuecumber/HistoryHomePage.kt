@@ -1,6 +1,8 @@
 package com.example.queuecumber
 
+import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.widget.ImageButton
 import android.widget.LinearLayout
@@ -28,10 +30,10 @@ class HistoryHomePage : AppCompatActivity() {
             for (i in 0 until history.length()) {
                 val view: LinearLayout =
                     LayoutInflater.from(this).inflate(R.layout.history_list_element, null) as LinearLayout
-                (view.getChildAt(1) as TextView).text = history.getJSONObject(i).getString("song_name")
-                (view.getChildAt(2) as TextView).text = history.getJSONObject(i).getString("artist_name")
+                (view.getChildAt(1) as TextView).text = "Title: " + history.getJSONObject(i).getString("song_name")
+                (view.getChildAt(2) as TextView).text = "Artist: " + history.getJSONObject(i).getString("artist_name")
                 val playedAtMillis = history.getJSONObject(i).getLong("played_at_millis")
-                (view.getChildAt(3) as TextView).text = TimeFormatter.formatDateTime(playedAtMillis)
+                (view.getChildAt(3) as TextView).text = "Time: " + TimeFormatter.formatDateTime(playedAtMillis)
 
 //                val playedAtDate = Date(playedAtMillis)
 //                val sdf = SimpleDateFormat("MMM d, yyyy - h:mm a", Locale.getDefault())

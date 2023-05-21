@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#2A6041"
+    android:paddingTop="16dp"
     tools:context=".RecommendationsHomePage">
 
     <TextView
@@ -13,14 +14,13 @@
         android:layout_height="wrap_content"
         android:text="RECOMMENDATIONS"
         android:textColor="#EEFFEE"
-        android:textSize="30sp"
+        android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.762"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.022" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="36dp"
+        android:layout_toRightOf="@+id/back_button_recommendations"/>
 
     <ImageButton
         android:id="@+id/back_button_recommendations"
@@ -31,24 +31,15 @@
         android:minHeight="0dp"
         android:paddingRight="4dp"
         android:src="@drawable/backbutton"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.065"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.019" />
+        android:layout_marginLeft="16dp" />
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="354dp"
-        android:layout_height="750dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:contentDescription="Scroll"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/activity_title"
-        app:layout_constraintVertical_bias="0.388">
+        android:layout_marginTop="32dp"
+        android:layout_below="@+id/activity_title">
 
         <LinearLayout
             android:id="@+id/recommendations_list_layout"
@@ -57,4 +48,4 @@
             android:orientation="vertical"></LinearLayout>
 
     </ScrollView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
