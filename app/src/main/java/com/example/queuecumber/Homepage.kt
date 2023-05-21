@@ -76,6 +76,7 @@ class Homepage : AppCompatActivity() {
                 (view.getChildAt(0) as TextView).text = activityName
                 activitiesPreview.addView(view)
             }
+
             val recommendations = response.getJSONArray("playlists")
             for (i in 0 until recommendations.length()) {
                 val playlistName = activities.getJSONObject(i).getString("name") + " Music"
@@ -84,12 +85,15 @@ class Homepage : AppCompatActivity() {
                 (view.getChildAt(0) as TextView).text = playlistName
                 recommendationsPreview.addView(view)
             }
+
             val history = response.getJSONArray("history")
             for (i in 0 until history.length()) {
                 val view:LinearLayout =
                     LayoutInflater.from(this).inflate(R.layout.history_preview_element, null) as LinearLayout
                 (view.getChildAt(1) as TextView).text = history.getJSONObject(i).getString("song_name")
                 (view.getChildAt(2) as TextView).text = history.getJSONObject(i).getString("artist_name")
+                val playedAtMillis = history.getJSONObject(i).getLong("played_at_millis")
+                (view.getChildAt(3) as TextView).text = TimeFormatter.formatDateNoYear(playedAtMillis)
                 historyPreview.addView(view)
             }
         }

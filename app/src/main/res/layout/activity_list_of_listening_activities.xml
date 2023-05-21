@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#2A6041"
+    android:padding="16dp"
     tools:context=".ListOfListeningActivities">
 
     <TextView
         android:id="@+id/choose_an_activity_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
         android:text="CHOOSE AN ACTIVITY"
         android:textColor="#EEFFEE"
-        android:textSize="30sp"
+        android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.846"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+        android:layout_marginTop="8dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_toRightOf="@+id/back_button_activity_selection"/>
 
     <ImageButton
         android:id="@+id/back_button_activity_selection"
@@ -29,26 +29,16 @@
         android:background="@drawable/round_button"
         android:contentDescription="Back"
         android:minHeight="0dp"
-        android:paddingRight="4dp"
-        android:src="@drawable/backbutton"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.065"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.019" />
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="36dp"
+        android:src="@drawable/backbutton" />
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="345dp"
-        android:layout_height="695dp"
-        android:layout_marginBottom="52dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:contentDescription="Scroll"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/choose_an_activity_title"
-        app:layout_constraintVertical_bias="0.508">
+        android:layout_below="@+id/choose_an_activity_title">
 
         <LinearLayout
             android:id="@+id/activities_list_layout"
@@ -59,4 +49,4 @@
     </ScrollView>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
